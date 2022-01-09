@@ -19,10 +19,17 @@ function Form({addContact,contacts}) {
         setForm({fullName:'',phoneNumber:''})
     }
     return (
-        <form onSubmit={onSubmitt}>
-            <input name='fullName' placeholder='Name?' value={form.fullName} onChange={onChangeInput} /><br/>
-            <input name='phoneNumber' placeholder='Number?' value={form.phoneNumber} onChange={onChangeInput} /><br/>
-            <button className="btn btn-primary" >Add</button>
+        <form onSubmit={onSubmitt} >
+            <div class="mb-3">
+                <label for="fullname" class="form-label">Fullname</label>
+                <input type="text" name='fullName' value={form.fullName} onChange={onChangeInput} className="form-control" id="fullname" aria-describedby="emailHelp"/>
+                <div className="form-text">İster Büyük,İster Küçük harfle kaydedin</div>
+            </div>
+            <div class="mb-3">
+                <label for="number" class="form-label">Phone Number</label>
+                <input name='phoneNumber' value={form.phoneNumber} onChange={onChangeInput} class="form-control" id="number"/>
+            </div>
+            <button className="btn btn-primary">Add</button>
         </form>
     )
 }
